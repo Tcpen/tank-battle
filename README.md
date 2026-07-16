@@ -6,7 +6,7 @@
 
 部署 GitHub Pages 后，访问：
 
-`https://<你的用户名>.github.io/tank-battle/`
+`https://tcpen.github.io/tank-battle/`
 
 ## 本地运行
 
