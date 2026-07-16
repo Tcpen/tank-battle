@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>坦克大战</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="hud">
+      <div class="hud-item">
+        <span class="hud-label">关卡</span>
+        <span id="level-display">1</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">得分</span>
+        <span id="score-display">0</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">生命</span>
+        <span id="lives-display">❤️ 20</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">大招</span>
+        <span id="ultimate-display">就绪</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">敌人</span>
+        <span id="enemies-display">0</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">躲避</span>
+        <span id="dodge-display">0</span>
+      </div>
+    </div>
+
+    <div id="game-stage">
+      <canvas id="game-canvas" width="624" height="624"></canvas>
+      <div id="overlay">
+        <div id="overlay-content">
+          <h1 id="overlay-title">坦克大战</h1>
+          <p id="overlay-message"></p>
+          <p id="overlay-hint">按 空格键 开始游戏</p>
+          <div id="ultimate-select" class="hidden">
+            <p class="ultimate-select-title">选择本关大招</p>
+            <div class="ultimate-options">
+              <button id="pick-laser" class="ultimate-btn laser-btn">
+                <span class="ultimate-name">激光</span>
+                <span class="ultimate-desc">直线穿透，摧毁路径上一切</span>
+                <span class="ultimate-key">按 1</span>
+              </button>
+              <button id="pick-explosion" class="ultimate-btn explosion-btn">
+                <span class="ultimate-name">爆炸</span>
+                <span class="ultimate-desc">范围爆破，消灭周围敌人</span>
+                <span class="ultimate-key">按 2</span>
+              </button>
+              <button id="pick-spray" class="ultimate-btn spray-btn">
+                <span class="ultimate-name">乱喷</span>
+                <span class="ultimate-desc">四面八方同时发射炮弹</span>
+                <span class="ultimate-key">按 3</span>
+              </button>
+            </div>
+          </div>
+          <div id="controls-info">
+            <p><strong>操作说明</strong></p>
+            <p>↑↓←→ 或 WASD — 移动坦克</p>
+            <p>鼠标左键 — 发射炮弹</p>
+            <p>鼠标右键 — 释放大招（10秒冷却）</p>
+            <p>每关开始可选：激光 / 爆炸 / 乱喷</p>
+            <p>消灭所有敌人坦克进入下一关！</p>
+            <p>你有 20 条命，小心躲避炮弹！</p>
+          </div>
+        </div>
+      </div>
+      <div id="error-box" class="hidden"></div>
+    </div>
+  </div>
+  <script src="game.js?v=15"></script>
+</body>
+</html>
